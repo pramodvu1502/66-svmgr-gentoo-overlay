@@ -13,11 +13,18 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="static static-libs init"
 
-DEPEND=" >=dev-libs/skalibs-2.14.3.0 >=sys-libs/oblibs-0.3.2.1 "
-RDEPEND=" >=dev-lang/execline-2.9.6.1 >=sys-apps/s6-2.13.1.0
+DEPEND="
+>=dev-libs/skalibs-2.14.3.0
+>=sys-libs/oblibs-0.3.2.1
+"
+RDEPEND="
+>=dev-lang/execline-2.9.6.1
+>=sys-apps/s6-2.13.1.0
 !static? ( ${DEPEND} )
 "
-BDEPEND="app-text/lowdown"
+BDEPEND="
+app-text/lowdown
+"
 
 src_configure() {
  local econfargs=(
@@ -40,5 +47,5 @@ src_configure() {
 src_install() {
  emake DESTDIR="${D}" install
  # Moving the doc paths to conform to gentoo's FHS
- else mv "${ED}/usr/share/doc/${PN}/${PV}" "${ED}/usr/share/doc/${PF}"; fi
+ mv "${ED}/usr/share/doc/${PN}/${PV}" "${ED}/usr/share/doc/${PF}"
 }
