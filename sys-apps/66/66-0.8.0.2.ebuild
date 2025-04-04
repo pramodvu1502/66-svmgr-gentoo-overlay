@@ -3,6 +3,8 @@
 
 EAPI=8
 
+inherit edo
+
 # Package name: sys-apps/66
 DESCRIPTION="Init system and dependency management over s6"
 HOMEPAGE="https://web.obarun.org/software/66/0.8.0.2/index/"
@@ -13,18 +15,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="static static-libs init"
 
-DEPEND="
->=dev-libs/skalibs-2.14.3.0
->=sys-libs/oblibs-0.3.2.1
-"
-RDEPEND="
->=dev-lang/execline-2.9.6.1
->=sys-apps/s6-2.13.1.0
+DEPEND=" >=dev-libs/skalibs-2.14.3.0 >=sys-libs/oblibs-0.3.2.1 "
+RDEPEND=" >=dev-lang/execline-2.9.6.1 >=sys-apps/s6-2.13.1.0
 !static? ( ${DEPEND} )
 "
-BDEPEND="
-app-text/lowdown
-"
+BDEPEND="app-text/lowdown"
 
 src_configure() {
  local econfargs=(
@@ -41,7 +36,7 @@ src_configure() {
  ); fi
  if use static-libs; then econfargs+=("--enable-static"); fi
 
- ./configure "${econfargs[@]}"
+ edo ./configure "${econfargs[@]}"
 }
 
 src_install() {

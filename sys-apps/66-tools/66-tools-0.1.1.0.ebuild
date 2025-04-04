@@ -3,6 +3,8 @@
 
 EAPI=8
 
+inherit edo
+
 # Package name: sys-apps/66-tools
 DESCRIPTION="Set of helper tools for execline and 66"
 HOMEPAGE="https://web.obarun.org/software/66-tools/0.1.1.0/index/"
@@ -69,10 +71,10 @@ src_configure() {
   fi
  fi
 
- ./configure "${econfargs[@]}"
+ edo ./configure "${econfargs[@]}"
 }
 
 src_install() {
  emake DESTDIR="${D}" install
- mv "${ED}/usr/share/doc/${PN}/${PV}" "${ED}/usr/share/doc/${PF}" || die "failed to correctly rename under /usr/share/doc"
+ mv "${ED}/usr/share/doc/${PN}/${PV}" "${ED}/usr/share/doc/${PF}"
 }

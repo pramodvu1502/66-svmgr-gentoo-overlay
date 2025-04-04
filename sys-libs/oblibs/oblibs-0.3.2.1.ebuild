@@ -3,6 +3,8 @@
 
 EAPI=8
 
+inherit edo
+
 DESCRIPTION="Library with convenience functions used mainly by sys-apps/66"
 HOMEPAGE="https://web.obarun.org/software/"
 SRC_URI="https://git.obarun.org/Obarun/${PN}/-/archive/${PV}/${P}.tar.gz"
@@ -26,5 +28,5 @@ src_configure() {
  if use static; then econfargs+=("--enable-allstatic" "--disable-shared"); fi
  if use static-libs; then econfargs+=("--enable-static"); fi
 
- econf ${econfargs[@]}
+ edo ./configure ${econfargs[@]}
 }
