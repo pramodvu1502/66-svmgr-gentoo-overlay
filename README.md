@@ -1,3 +1,7 @@
+# NOTE:
+This repo might get shifted soon onto another git-website.
+Kindly keep an eye on this README.
+
 # 66-svmgr-gentoo-overlay
 The git repo containing a gentoo overlay for 66 packages... until accepted by Gentoo upstream repo.
 
