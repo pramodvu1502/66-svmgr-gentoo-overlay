@@ -7,11 +7,15 @@
 	</longdescription>
 	<use>
 		<flag name="elogind">Relevant only if USE=dbus else dbus-related packages not pulled; For sd-bus library in <pkg>sys-auth/elogind</pkg>. Disabling this will pull <pkg>sys-libs/basu</pkg></flag>
-		<flag name="dbus">Depending on useflag "elogind" pulls either <pkg>sys-auth/elogind</pkg> or <pkg>sys-libs/basu</pkg> </flag>
+		<flag name="dbus">Depending on useflag "elogind" pulls either <pkg>sys-auth/elogind</pkg> or <pkg>sys-libs/basu</pkg> in order to provide 66-dbus-launch</flag>
 	</use>
 	<upstream>
-                <maintainer><email>pramodvu1502@proton.me</email></maintainer>
+                <maintainer>
+                            <email>pramodvu1502@proton.me</email>
+                            <name>Pramod V U</name>
+                </maintainer>
 		<bugs-to>mailto:pramodvu1502@proton.me</bugs-to>
-		<!--remote-id type="">https://git.obarun.org/Obarun/</remote-id-->
+		<!--remote-id type="custom_url_not_yet_supported">https://git.obarun.org/Obarun/</remote-id-->
+                <!--Kindly refer HOMEPAGE for remote-id -->
 	</upstream>
 </pkgmetadata>

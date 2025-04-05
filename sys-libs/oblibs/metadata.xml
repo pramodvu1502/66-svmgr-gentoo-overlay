@@ -2,8 +2,11 @@
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
   <upstream>
-    <maintainer><email>pramodvu1502@proton.me</email></maintainer>
-    <!-- remote-id type="gitlab">https://git.obarun.org/Obarun/66</remote-id -->
+    <maintainer>
+     <email>pramodvu1502@proton.me</email>
+     <name>Pramod V U</name>
+    </maintainer>
+    <!-- remote-id type="custom-gitlab_not_yet_supported">https://git.obarun.org/Obarun/66</remote-id -->
     <bugs-to>mailto:pramodvu1502@proton.me</bugs-to>
   </upstream>
 </pkgmetadata>

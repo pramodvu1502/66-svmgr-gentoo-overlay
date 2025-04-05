@@ -13,11 +13,15 @@ SRC_URI="https://git.obarun.org/Obarun/${PN}/-/archive/${PV}/${P}.tar.gz"
 LICENSE="0BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="static static-libs init"
+IUSE="init"
 
-DEPEND=" >=dev-libs/skalibs-2.14.3.0 >=sys-libs/oblibs-0.3.2.1 "
-RDEPEND=" >=dev-lang/execline-2.9.6.1 >=sys-apps/s6-2.13.1.0
-!static? ( ${DEPEND} )
+DEPEND="
+>=dev-libs/skalibs-2.14.3.0
+>=sys-libs/oblibs-0.3.2.1
+>=dev-lang/execline-2.9.6.1
+"
+RDEPEND="${DEPEND}
+>=sys-apps/s6-2.13.1.0
 "
 BDEPEND="app-text/lowdown"
 
@@ -28,19 +32,11 @@ src_configure() {
  "--libdir=${EPREFIX}/usr/$(get_libdir)/${PN}"
  )
 
- if use static
- then econfargs+=(
- "--enable-allstatic"
- "--disable-shared"
- "--enable-static-libc"
- ); fi
- if use static-libs; then econfargs+=("--enable-static"); fi
-
  edo ./configure "${econfargs[@]}"
 }
 
 src_install() {
- emake DESTDIR="${D}" install
+ emake DESTDIR="${ED}" install
  # Moving the doc paths to conform to gentoo's FHS
  mv "${ED}/usr/share/doc/${PN}/${PV}" "${ED}/usr/share/doc/${PF}"
 }

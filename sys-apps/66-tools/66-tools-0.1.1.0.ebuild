@@ -13,21 +13,21 @@ SRC_URI="https://git.obarun.org/Obarun/${PN}/-/archive/${PV}/${P}.tar.gz"
 LICENSE="0BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="static static-libs elogind dbus"
+IUSE="elogind dbus"
 
-DEPEND=" >=dev-libs/skalibs-2.14.3.0 >=sys-libs/oblibs-0.3.1.0
+DEPEND="
+>=dev-libs/skalibs-2.14.3.0
+>=sys-libs/oblibs-0.3.1.0
+>=dev-lang/execline-2.9.6.1
 dbus? (
  elogind? ( sys-auth/elogind )
  !elogind? ( sys-libs/basu )
 )
 "
-
-RDEPEND=" >=dev-lang/execline-2.9.6.1
-!static? ( ${DEPEND} )
-"
+RDEPEND="${DEPEND}"
 # dbus? ( sys-apps/dbus-broker[-launcher] ) has been omitted for now
 # It mangles dependencies; Causes issues on musl etc..
-# The frontend will also be included in this package soon.
+# The frontend for 66-dbus-launch will also be included in this package soon.
 
 BDEPEND="app-text/lowdown"
 
@@ -55,14 +55,6 @@ src_configure() {
  "--prefix=/usr"
  "--exec-prefix=/usr"
  )
-
- if use static
- then econfargs+=(
- "--enable-allstatic"
- "--disable-shared"
- "--enable-static-libc"
- ); fi
- if use static-libs; then econfargs+=("--enable-static"); fi
 
  if use dbus; then
   if use elogind
