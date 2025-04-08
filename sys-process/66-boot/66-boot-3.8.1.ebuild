@@ -8,7 +8,7 @@ inherit edo
 # PackageName: sys-process/66-boot Version: 3.8.1
 DESCRIPTION="The core boot@ module for booting using sys-apps/66"
 HOMEPAGE="https://git.obarun.org/66-service/gentoo/boot"
-SRC_URI="https://git.obarun.org/66-service/gentoo/boot-module/-/archive/${PV}/boot-module-${PV}.tar.gz"
+SRC_URI="https://git.obarun.org/66-service/gentoo/boot-module/-/archive/${PV}/boot-module-${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="ISC"
 SLOT="0"
