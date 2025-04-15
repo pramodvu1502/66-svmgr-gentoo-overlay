@@ -41,8 +41,8 @@ src_install() {
  emake DESTDIR="${ED}" install
 
  # Moving "/sbin/init" script to "/etc/66/init" for configurability and to avoid conflicts...
- edo mv "${ED}/sbin/init" "${ED}/etc/66/sbin-init"
- use init && ln -s "../etc/66/init" "${ED}/sbin/init"
+ edo mv "${ED}/usr/bin/init" "${ED}/etc/66/sbin-init"
+ use init && mkdir -p "${ED}/sbin" && ln -s "../etc/66/init" "${ED}/sbin/init"
 
  # Moving the doc paths to conform to gentoo's FHS
  edo mv "${ED}/usr/share/doc/${PN}/${PV}" "${ED}/usr/share/doc/${PF}"
