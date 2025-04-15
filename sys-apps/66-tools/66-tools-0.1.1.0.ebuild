@@ -29,7 +29,9 @@ RDEPEND="${DEPEND}"
 # It mangles dependencies; Causes issues on musl etc..
 # The frontend for 66-dbus-launch will also be included in this package soon.
 
-BDEPEND="app-text/lowdown"
+BDEPEND="
+app-text/lowdown
+"
 
 pkg_setup() {
 if use dbus; then
@@ -68,5 +70,5 @@ src_configure() {
 
 src_install() {
  emake DESTDIR="${D}" install
- mv "${ED}/usr/share/doc/${PN}/${PV}" "${ED}/usr/share/doc/${PF}"
+ edo mv "${ED}/usr/share/doc/${PN}/${PV}" "${ED}/usr/share/doc/${PF}"
 }

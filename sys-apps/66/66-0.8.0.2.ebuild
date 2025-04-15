@@ -13,7 +13,7 @@ SRC_URI="https://git.obarun.org/Obarun/${PN}/-/archive/${PV}/${P}.tar.gz"
 LICENSE="0BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="init"
+IUSE="-init"
 
 DEPEND="
 >=dev-libs/skalibs-2.14.3.0
@@ -23,7 +23,9 @@ DEPEND="
 RDEPEND="${DEPEND}
 >=sys-apps/s6-2.13.1.0
 "
-BDEPEND="app-text/lowdown"
+BDEPEND="
+app-text/lowdown
+"
 
 src_configure() {
  local econfargs=(
@@ -37,6 +39,11 @@ src_configure() {
 
 src_install() {
  emake DESTDIR="${ED}" install
+
+ # Moving "/sbin/init" script to "/etc/66/init" for configurability and to avoid conflicts...
+ edo mv "${ED}/sbin/init" "${ED}/etc/66/sbin-init"
+ use init && ln -s "../etc/66/init" "${ED}/sbin/init"
+
  # Moving the doc paths to conform to gentoo's FHS
- mv "${ED}/usr/share/doc/${PN}/${PV}" "${ED}/usr/share/doc/${PF}"
+ edo mv "${ED}/usr/share/doc/${PN}/${PV}" "${ED}/usr/share/doc/${PF}"
 }
