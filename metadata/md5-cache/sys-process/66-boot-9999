@@ -5,10 +5,9 @@ EAPI=8
 HOMEPAGE=https://git.obarun.org/66-service/gentoo/boot-module
 INHERIT=git-r3 optfeature edo
 IUSE=cryptsetup nftables dmraid lvm btrfs zfs
-KEYWORDS=~amd64
 LICENSE=ISC
 PROPERTIES=live
 RDEPEND=sys-apps/66 sys-apps/66-tools app-shells/bash sys-apps/iproute2 >=sys-apps/s6-linux-utils-2.6.2.1 >=sys-apps/s6-portable-utils-2.3.0.4 btrfs? ( sys-fs/btrfs-progs ) zfs? ( sys-fs/zfs sys-fs/zfs-kmod ) nftables? ( net-firewall/nftables )
 SLOT=0
 _eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81	optfeature	538bce96e5589935b57e178e8635f301	edo	367e103a74bf77e6a8da7894d999fa3c
-_md5_=f20322daea0fbd115e2cf4368e360b92
+_md5_=b55ddfbb99c00cacc667feffc7970872

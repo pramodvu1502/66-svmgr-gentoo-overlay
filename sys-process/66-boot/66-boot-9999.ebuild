@@ -6,16 +6,16 @@ inherit git-r3
 inherit optfeature
 inherit edo
 
-# PackageName: sys-process/66-boot
+# PackageName: sys-process/66-boot Version: live from gitlab
 DESCRIPTION="The core boot@ module for booting using sys-apps/66"
 HOMEPAGE="https://git.obarun.org/66-service/gentoo/boot-module"
 EGIT_REPO_URI="https://git.obarun.org/66-service/gentoo/boot-module"
-EGIT_COMMIT="7acaf10a" # The commit for the tag ${PV} (=3.8.1)
+
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64"
-IUSE="cryptsetup nftables dmraid lvm btrfs zfs"
+#KEYWORDS="~amd64" # masked anyway by -9999
+IUSE="cryptsetup nftables dmraid lvm btrfs zfs" # udev tmpfiles etc... coming soon
 
 BDEPEND="
 app-text/lowdown
@@ -42,7 +42,7 @@ optfeature "Use the more advanced nft" net-firewall/nftables
 src_configure() { # Under construction
 local econfargs=(
 "--prefix=${EPREFIX}/usr"
-"--version=${PV}"
+"--version=9.9.9"
 )
 # --opentmpfiles-script not touched as frontends are using bindir instead; using systemd-tmpfiles
 # --modules-script also left alone as modules.sh is inlined into the modules-system frontend itself
