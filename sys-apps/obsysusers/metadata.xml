@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<upstream>
+                <!--remote-id type="">https://git.obarun.org/obdev/obsysusers</remote-id-->
+		<bugs-to>mailto:pramodvu1502@proton.me</bugs-to>
+		<maintainer>
+                    <email>pramodvu1502@proton.me</email>
+                    <name>Pramod V U</name>
+                </maintainer>   
+	</upstream >
+</pkgmetadata>
