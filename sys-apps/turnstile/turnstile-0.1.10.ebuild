@@ -28,4 +28,7 @@ app-text/scdoc
 pkg_setup() {
 optfeature_header
 optfeature "Seat management; ${PN} doesn't do it" sys-auth/seatd
+elog "Add \"session optional pam_turnstile.so\" to your pam configuration to use turnstile"
+elog "Add pam_{systemd|elogind}.so in there if you want it to be recognized by those software"
+elog "However, polkit etc... still don't have full support for turnstile; work is underway"
 }
