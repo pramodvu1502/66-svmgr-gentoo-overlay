@@ -6,9 +6,9 @@ EAPI=8
 HOMEPAGE=https://web.obarun.org/software/obsysusers/v0.1.2.0/index
 INHERIT=edo
 KEYWORDS=~amd64
-LICENSE=0BSD
+LICENSE=ISC
 RDEPEND=>=dev-libs/skalibs-2.14.3.0 >=sys-libs/oblibs-0.3.2.1 sys-apps/shadow
 SLOT=0
 SRC_URI=https://git.obarun.org/Obarun/obsysusers/-/archive/0.1.2.0/obsysusers-0.1.2.0.tar.gz
 _eclasses_=edo	367e103a74bf77e6a8da7894d999fa3c
-_md5_=191e95d4cd8c900d1a23e6560812d81b
+_md5_=6574ce16c34b7dcf86fa72c7a02fd3b8

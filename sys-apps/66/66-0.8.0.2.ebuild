@@ -10,7 +10,7 @@ DESCRIPTION="Init system and dependency management over s6"
 HOMEPAGE="https://web.obarun.org/software/66/0.8.0.2/index/"
 SRC_URI="https://git.obarun.org/Obarun/${PN}/-/archive/${PV}/${P}.tar.gz"
 
-LICENSE="0BSD"
+LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="-init"

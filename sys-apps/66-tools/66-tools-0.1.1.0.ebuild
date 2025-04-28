@@ -10,7 +10,7 @@ DESCRIPTION="Set of helper tools for execline and 66"
 HOMEPAGE="https://web.obarun.org/software/66-tools/0.1.1.0/index/"
 SRC_URI="https://git.obarun.org/Obarun/${PN}/-/archive/${PV}/${P}.tar.gz"
 
-LICENSE="0BSD"
+LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="elogind dbus"
