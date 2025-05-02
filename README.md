@@ -1,17 +1,5 @@
-# NOTE:
-This repo might get shifted soon onto another git-website.
-Kindly keep an eye on this README.
-
 # 66-svmgr-gentoo-overlay
 The git repo containing a gentoo overlay for 66 packages... until accepted by Gentoo upstream repo.
-
-`66-dbus-launch` in `sys-apps/66-tools[dbus]` is a replacement to `dbus-broker-launcher` in `sys-apps/dbus-broker[launcher]`. `dbus-broker` is systemd-independent, while the launcher is deeply intertwined into systemd. The 66-dbus-launch uses 66 instead, providing all functions like dbus-activation.
-`sys-apps/66-tools[dbus]` on musl with `sys-apps/dbus-broker[-launcher]` and `sys-libs/basu` have some minor issues. The QA-report which is complaining of this isn't descriptive enough. [I just removed dbus-broker from RDEPEND for now...
-I have removed the dependency on dbus-broker and added explicit `elog` messages in `pkg_setup` asking users to install as needed.
-
-Basically, the entire package has been masked just because a useflag depends on systemd
-
-Users of this repo, kindly help with those issues... I can be contacted via <pramodvu1502@proton.me>.
 
 # Adding the overlay on your system
 Provided that `app-eselect/eselect-repository` is installed (It *will* be on 99% systems), this will work for most users.
@@ -26,3 +14,21 @@ sync-uri = https://github.com/pramodvu1502/66-svmgr-gentoo-overlay.git
 ```
 
 After adding the overlay by either method, run `emerge --sync 66-svmgr` or `emaint sync -r 66-svmgr` to sync the repo to your system.
+
+# Packages included:
+- `sys-apps/66` is the core set of binaries which forms the service management toolset.
+- `sys-apps/66-tools` is a collection of helper tools which complete the 66 suite, providig conveniences.
+- `sys-libs/oblibs` is a small general-puspose convenience library used by all 66 software.
+- `sys-apps/turnstile` is a simple (incomplete as of now) session management daemon aimed at replacing (e)logind but alongside seatd and acpid.
+- `sys-process/66-boot` is the "boot"/"init" module needed for booting into a stupidly simple system to the tty.
+- [TBD] `sys-process/66-initial-setup` is 66's equivalent of a "firstboot"; 66 doesn't have the concept of a "firstboot".
+- `66-frontend` is a new category in this repository, for ebuilds supplying service frontends.
+- `66-frontend/66-service-meta` is a useflag-configured metapackage to pull the packages supplying frontends. It is meant to be used instead of cluttering the portage world file.
+- All other packages in `66-frontend` category aren't documented here, they just supply a file or two, service definiton frontends for 66.
+
+# Some miscellaneous relevant info:
+- Many new frontends have been packaged, namely busybox's.
+- `sys-libs/oblibs`, `sys-apps/66`, `sys-apps/66-tools`, I have mailed to the GURU devs proposing adding these 3 packages to GURU.
+- `66` will very soon come up with a new release, preparing for it...
+- Plan to make `66` depend on `net-misc/s6-networking` via useflag... Components like `s6-tcpserver` are very much essential to fully replace inetd's functionality.
+- Does anyone really use `sdnotify-wrapper`? It's just a C file anyways...
