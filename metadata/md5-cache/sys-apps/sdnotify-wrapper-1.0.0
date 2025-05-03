@@ -1,0 +1,13 @@
+DEFINED_PHASES=install setup unpack
+DEPEND=>=dev-libs/skalibs-2.14.3.0
+DESCRIPTION=A wrapper which uses sd_notify() in behalf of the daemon, allowing the daemon to use the s6 protocol
+EAPI=8
+HOMEPAGE=https://www.skarnet.org/software/misc/sdnotify-wrapper.c
+INHERIT=edo
+KEYWORDS=~amd64
+LICENSE=ISC
+RDEPEND=>=dev-libs/skalibs-2.14.3.0
+SLOT=0
+SRC_URI=https://www.skarnet.org/software/misc/sdnotify-wrapper.c
+_eclasses_=edo	367e103a74bf77e6a8da7894d999fa3c
+_md5_=92810f329d8ca754f7f8371b175920ac
