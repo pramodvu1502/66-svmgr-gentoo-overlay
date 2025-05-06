@@ -3,13 +3,14 @@
 EAPI=8
 
 #inherit git-r3
+#inherit edo
 
 DESCRIPTION="A useflag-configured metapackage to pull in 66 frontend packages without cluttering set @world"
 #EGIT_REPO_URI=""
 
 SLOT="0"
 KEYWORDS="amd64"
-IUSE="-busybox -acpid -iwd -wpa-supplicant -elogind -iwd -networkmanager -wifi -acpi -dbus -dbus-broker"
+IUSE="-busybox -acpid -iwd -wpa-supplicant -elogind -iwd -networkmanager -wifi -acpi -dbus -dbus-broker -colord -connman -cups -dhclient"
 
 # The basic package-name useflags
 DEPEND="
@@ -20,6 +21,14 @@ wpa-supplicant? ( 66-frontend/66-wpa-supplicant-frontends )
 elogind? ( 66-frontend/66-elogind-frontend )
 networkmanager? ( 66-frontend/66-networkmanager-frontend )
 bluetooth? ( 66-frontend/66-bluez-frontends )
+colord? ( 66-frontend/66-colord-frontend )
+connman? ( 66-frontend/66-connmand-frontend )
+cups? ( 66-frontend/66-cups-frontend )
+dhclient? ( 66-frontend/66-dhclient-frontend )
+dhcpcd? ( 66-frontend/66-dhcpcd-frontends )
+dmraid? ( 66-frontend/66-dmraid-frontend )
+dnsmasq? ( 66-frontend/66-dnsmasq-frontend )
+docker? ( 66-frontend/66-dockerd-frontend )
 "
 
 # Twisted flags to respect the usual USE whenever possible and above not sufficient.

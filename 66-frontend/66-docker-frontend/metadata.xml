@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<longdescription>
+	This package is the boot@ module, which is essential for booting a system with <pkg>sys-apps/66</pkg>.
+
+	A module is a type of (mandatorily instantiated) service which contains a group of internal services and a "configure" script.
+	The script analyzes the env-vars and the system state to enable and configure an optimal set of services as needed.
+	The module itself can depend on external services, but services inside the module are self-contained.
+	It provides immense flexibility and customizability;
+	The scriptwriter can write some regexes using the central frontend file and it will be automatically applies across the services and scripts.
+	The "configure" script allows you to write your own logic on "What to do?"; While exposing all knobs and tunables to the user via the EnvFile and the frontend regexes.
+	It is the most advanced feature of 66.
+	</longdescription>
+	<!--use></use-->
+	<upstream>
+                <!--remote-id type="">https://git.obarun.org/Obarun/66</remote-id-->
+		<bugs-to>mailto:pramodvu1502@proton.me</bugs-to>
+		<maintainer>
+                    <email>pramodvu1502@proton.me</email>
+                    <name>Pramod V U</name>
+                </maintainer>   
+	</upstream >
+</pkgmetadata>
