@@ -10,7 +10,7 @@ DESCRIPTION="A useflag-configured metapackage to pull in 66 frontend packages wi
 
 SLOT="0"
 KEYWORDS="amd64"
-IUSE="-busybox -acpid -iwd -wpa-supplicant -elogind -iwd -networkmanager -wifi -acpi -dbus -dbus-broker -colord -connman -cups -dhclient"
+IUSE="-busybox -acpid -iwd -wpa-supplicant -elogind -iwd -networkmanager -wifi -acpi -dbus -dbus-broker -colord -connman -cups -dhclient -dhcpcd -dmraid -dnsmasq -docker -gpm -greetd -gvfs -hveged -jack -lemurs -libvirt -lvm -nfs -ntpd -openntpd -ntpclient -pipewire -pulseaudio"
 
 # The basic package-name useflags
 DEPEND="
@@ -29,13 +29,30 @@ dhcpcd? ( 66-frontend/66-dhcpcd-frontends )
 dmraid? ( 66-frontend/66-dmraid-frontend )
 dnsmasq? ( 66-frontend/66-dnsmasq-frontend )
 docker? ( 66-frontend/66-dockerd-frontend )
+gpm? ( 66-frontend/66-gpm-frontend )
+greetd? ( 66-frontend/66-greetd-frontend )
+gvfs? ( 66-frontend/66-gvfs-frontends )
+haveged? ( 66-frontend/66-haveged-frontends )
+jack? ( 66-frontend/66-jackd-frontend )
+lemurs? ( 66-frontend/66-lemurs-frontend )
+libvirt? ( 66-frontend/66-libvirtd-frontends )
+lvm? ( 66-frontend/66-lvm2-frontends )
+nfs? ( 66-frontend/66-nfs-utils-frontends )
+ntpclient? ( 66-frontend/66-ntpclient-frontend )
+openntpd? ( 66-frontend/66-openntpd-frontend )
+ntpd? ( 66-frontend/66-ntpd-frontend )
+pipewire? ( 66-frontend/66-pipewire-frontend )
 "
 
 # Twisted flags to respect the usual USE whenever possible and above not sufficient.
 RDEPEND="${DEPEND}
 acpi? ( !elogind? ( 66-frontend/66-acpid-frontend ) )
 wifi? ( !iwd? ( 66-frontend/66-wpa-supplicant-frontends ) )
-dbus? ( dbus-broker? ( 66-frontend/dbus-broker-frontend ) !dbus-broker? ( 66-frontend/dbus-daemon-frontend ) )
+dbus? (
+ dbus-broker? ( 66-frontend/dbus-broker-frontend )
+ !dbus-broker? ( 66-frontend/dbus-daemon-frontend )
+)
+pulseaudio? ( !pipewire? ( 66-frontend/66-pulseaudio-frontend ) )
 "
 
 pkg_setup() {
