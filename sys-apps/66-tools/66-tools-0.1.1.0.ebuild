@@ -16,9 +16,7 @@ KEYWORDS="~amd64"
 IUSE="elogind dbus"
 
 DEPEND="
->=dev-libs/skalibs-2.14.3.0
 >=sys-libs/oblibs-0.3.1.0
->=dev-lang/execline-2.9.6.1
 dbus? (
  elogind? ( sys-auth/elogind )
  !elogind? ( sys-libs/basu )
@@ -27,7 +25,6 @@ dbus? (
 RDEPEND="${DEPEND}"
 # dbus? ( sys-apps/dbus-broker[-launcher] ) has been omitted for now
 # It mangles dependencies; Causes issues on musl etc..
-# The frontend for 66-dbus-launch will also be included in this package soon.
 
 BDEPEND="
 app-text/lowdown

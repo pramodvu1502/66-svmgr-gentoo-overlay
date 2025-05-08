@@ -1,15 +1,15 @@
 BDEPEND=app-text/lowdown
 DEFINED_PHASES=configure install
-DEPEND=>=dev-libs/skalibs-2.14.3.0 >=sys-libs/oblibs-0.3.3.0 >=dev-lang/execline-2.9.6.1
+DEPEND=>=sys-libs/oblibs-0.3.3.0
 DESCRIPTION=Init system and dependency management over s6
 EAPI=8
 HOMEPAGE=https://web.obarun.org/software/66/0.8.0.2/index/
 INHERIT=edo
-IUSE=-init
+IUSE=-init +tools +networking +s6-linux-utils +s6-portable-utils
 KEYWORDS=~amd64
 LICENSE=ISC
-RDEPEND=>=dev-libs/skalibs-2.14.3.0 >=sys-libs/oblibs-0.3.3.0 >=dev-lang/execline-2.9.6.1 >=sys-apps/s6-2.13.1.0
+RDEPEND=>=sys-libs/oblibs-0.3.3.0 >=sys-apps/s6-2.13.1.0 tools? ( sys-apps/66-tools ) networking? ( net-misc/s6-networking ) s6-linux-utils? ( sys-apps/s6-linux-utils ) s6-portable-utils? ( sys-apps/s6-portable-utils )
 SLOT=0
 SRC_URI=https://git.obarun.org/Obarun/66/-/archive/0.8.1.1/66-0.8.1.1.tar.gz
 _eclasses_=edo	367e103a74bf77e6a8da7894d999fa3c
-_md5_=ea9e533123f175a1e1d0cefa0adc2085
+_md5_=6cce0b2cc9166982c635890310875f12

@@ -1,6 +1,6 @@
 BDEPEND=app-text/lowdown
 DEFINED_PHASES=configure install setup
-DEPEND=>=dev-libs/skalibs-2.14.3.0 >=sys-libs/oblibs-0.3.1.0 >=dev-lang/execline-2.9.6.1 dbus? ( elogind? ( sys-auth/elogind ) !elogind? ( sys-libs/basu ) )
+DEPEND=>=sys-libs/oblibs-0.3.1.0 dbus? ( elogind? ( sys-auth/elogind ) !elogind? ( sys-libs/basu ) )
 DESCRIPTION=Set of helper tools for execline and 66
 EAPI=8
 HOMEPAGE=https://web.obarun.org/software/66-tools/0.1.1.0/index/
@@ -8,8 +8,8 @@ INHERIT=edo
 IUSE=elogind dbus
 KEYWORDS=~amd64
 LICENSE=ISC
-RDEPEND=>=dev-libs/skalibs-2.14.3.0 >=sys-libs/oblibs-0.3.1.0 >=dev-lang/execline-2.9.6.1 dbus? ( elogind? ( sys-auth/elogind ) !elogind? ( sys-libs/basu ) )
+RDEPEND=>=sys-libs/oblibs-0.3.1.0 dbus? ( elogind? ( sys-auth/elogind ) !elogind? ( sys-libs/basu ) )
 SLOT=0
 SRC_URI=https://git.obarun.org/Obarun/66-tools/-/archive/0.1.1.0/66-tools-0.1.1.0.tar.gz
 _eclasses_=edo	367e103a74bf77e6a8da7894d999fa3c
-_md5_=3e1c9bbc2bd374dde0a0874d6f892a6e
+_md5_=fd6cf09b64320c00f0287a3a8aa2b838

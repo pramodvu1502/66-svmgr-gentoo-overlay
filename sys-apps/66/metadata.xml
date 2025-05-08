@@ -2,10 +2,14 @@
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<use>
-		<flag name="init">Provides /usr/bin/init binary for directly booting 66; Disable if you want to boot 66 under a sysv-style init, or some other init system.</flag>
-	</use>
+		<flag name="init">Provide /usr/bin/init execline script for directly booting 66; The script is available at /etc/66/sbin-init regardless of this flag</flag>
+	        <flag name="tools">Depend on <pkg>sys-apps/66-tools</pkg> !!MANY FRONTENDS REQUIRE THIS!!</flag>
+                <flag name="s6-linux-utils">Depend on <pkg>sys-apps/s6-linux-utils</pkg> which many boot-related frontends require</flag>
+                <flag name="s6-portable-utils">Depend on <pkg>sys-apps/s6-portable-utils</pkg> for small tasks in the frontends</flag>
+                <flag name="networking">Depend on <pkg>net-misc/s6-networking</pkg> mainly for inetd-like superservers</flag>
+       </use>
 	<upstream>
-                <!--remote-id type="">https://git.obarun.org/Obarun/66</remote-id-->
+                <!--remote-id type="direct-link-not-supported-here">https://git.obarun.org/Obarun/66</remote-id-->
 		<bugs-to>mailto:pramodvu1502@proton.me</bugs-to>
 		<maintainer>
                     <email>pramodvu1502@proton.me</email>
