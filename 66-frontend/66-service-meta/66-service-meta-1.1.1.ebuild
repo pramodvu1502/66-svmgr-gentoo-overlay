@@ -10,7 +10,7 @@ DESCRIPTION="A useflag-configured metapackage to pull in 66 frontend packages wi
 
 SLOT="0"
 KEYWORDS="amd64"
-IUSE="-busybox -acpid -iwd -wpa-supplicant -elogind -iwd -networkmanager -wifi -acpi -dbus -dbus-broker -colord -connman -cups -dhclient -dhcpcd -dmraid -dnsmasq -docker -gpm -greetd -gvfs -hveged -jack -lemurs -libvirt -lvm -nfs -ntpd -openntpd -ntpclient -pipewire -pulseaudio"
+IUSE="-busybox -acpid -iwd -wpa-supplicant -elogind -iwd -networkmanager -wifi -acpi -dbus -dbus-broker -colord -connman -cups -dhclient -dhcpcd -dmraid -dnsmasq -docker -gpm -greetd -gvfs -hveged -jack -lemurs -libvirt -lvm -nfs -ntpd -openntpd -ntpclient -pipewire -pulseaudio -rtkit -samba -sddm -seatd -slim -spamd -ssh -syslog-ng"
 
 # The basic package-name useflags
 DEPEND="
@@ -42,6 +42,14 @@ ntpclient? ( 66-frontend/66-ntpclient-frontend )
 openntpd? ( 66-frontend/66-openntpd-frontend )
 ntpd? ( 66-frontend/66-ntpd-frontend )
 pipewire? ( 66-frontend/66-pipewire-frontend )
+rtkit? ( 66-frontend/66-rtkit-frontend )
+samba? ( 66-frontend/66-samba-frontend )
+sddm? ( 66-frontend/66-sddm-frontend )
+seatd? ( 66-frontend/66-seatd-frontend )
+slim? ( 66-frontend/66-slim-frontend )
+spamd? ( 66-frontend/66-spamd-frontend )
+ssh? ( 66-frontend/66-sshd-frontend )
+syslog-ng? ( 66-frontend/66-syslog-ng-frontend )
 "
 
 # Twisted flags to respect the usual USE whenever possible and above not sufficient.
