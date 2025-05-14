@@ -22,13 +22,11 @@ After adding the overlay by either method, run `emerge --sync 66-svmgr` or `emai
 - `sys-apps/turnstile` is a simple (incomplete as of now) session management daemon aimed at replacing (e)logind but alongside seatd and acpid.
 - `sys-process/66-boot` is the "boot"/"init" module needed for booting into a stupidly simple system to the tty.
 - [TBD] `sys-process/66-initial-setup` is 66's equivalent of a "firstboot"; 66 doesn't have the concept of a "firstboot".
+- `sys-apps/sdnotify-wrapper` is a wrapper allowing a daemon to use s6's notification protocol, but relaying it to `sd_notify()`.
 - `66-frontend` is a new category in this repository, for ebuilds supplying service frontends.
 - `66-frontend/66-service-meta` is a useflag-configured metapackage to pull the packages supplying frontends. It is meant to be used instead of cluttering the portage world file.
 - All other packages in `66-frontend` category aren't documented here, they just supply a file or two, service definiton frontends for 66.
 
 # Some miscellaneous relevant info:
-- Many new frontends have been packaged, namely busybox's.
-- `sys-libs/oblibs`, `sys-apps/66`, `sys-apps/66-tools`, I have mailed to the GURU devs proposing adding these 3 packages to GURU.
-- `66` will very soon come up with a new release, preparing for it...
-- Plan to make `66` depend on `net-misc/s6-networking` via useflag... Components like `s6-tcpserver` are very much essential to fully replace inetd's functionality.
-- Does anyone really use `sdnotify-wrapper`? It's just a C file anyways...
+- Testers will be appreciated
+- `sys-process/66-initial-setup` needs some thought on what exactly to do...
