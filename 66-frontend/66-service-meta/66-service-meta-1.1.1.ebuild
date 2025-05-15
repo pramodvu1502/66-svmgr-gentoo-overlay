@@ -10,7 +10,7 @@ DESCRIPTION="A useflag-configured metapackage to pull in 66 frontend packages wi
 
 SLOT="0"
 KEYWORDS="amd64"
-IUSE="-busybox -acpid -iwd -wpa-supplicant -elogind -iwd -networkmanager -wifi -acpi -dbus -dbus-broker -colord -connman -cups -dhclient -dhcpcd -dmraid -dnsmasq -docker -gpm -greetd -gvfs -hveged -jack -lemurs -libvirt -lvm -nfs -ntpd -openntpd -ntpclient -pipewire -pulseaudio -rtkit -samba -sddm -seatd -slim -spamd -ssh -syslog-ng"
+IUSE="-busybox -acpid -iwd -wpa-supplicant -elogind -iwd -networkmanager -wifi -acpi -dbus -dbus-broker -colord -connman -cups -dhclient -dhcpcd -dmraid -dnsmasq -docker -gpm -greetd -gvfs -hveged -jack -lemurs -libvirt -lvm -nfs -ntpd -openntpd -ntpclient -pipewire -pulseaudio -rtkit -samba -sddm -seatd -slim -spamd -ssh -syslog-ng -ufw -uuidd -utlogd -wicd -xdg-user-dirs -zfs"
 
 # The basic package-name useflags
 DEPEND="
@@ -50,6 +50,12 @@ slim? ( 66-frontend/66-slim-frontend )
 spamd? ( 66-frontend/66-spamd-frontend )
 ssh? ( 66-frontend/66-sshd-frontend )
 syslog-ng? ( 66-frontend/66-syslog-ng-frontend )
+ufw? ( 66-frontend/66-ufw-frontend )
+utlogd? ( 66-frontend/66-utlogd-frontend )
+uuidd? ( 66-frontend/66-uuidd-frontend )
+wicd? ( 66-frontend/66-wicd-frontend )
+xdg-user-dirs? ( 66-frontend/66-xdg-user-dirs-frontend )
+zfs? ( 66-frontend/66-zfs-frontend )
 "
 
 # Twisted flags to respect the usual USE whenever possible and above not sufficient.
