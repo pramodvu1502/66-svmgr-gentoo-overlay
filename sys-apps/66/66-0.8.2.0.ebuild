@@ -4,6 +4,7 @@
 EAPI=8
 
 inherit meson
+inherit edo
 
 # Package name: sys-apps/66
 DESCRIPTION="Init system and dependency management over s6"
